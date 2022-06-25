@@ -101,6 +101,43 @@
 #' ## ---- delete 'pyroc' folder -----
 #' unlink(x = "/tmp/pyroc", recursive = TRUE)
 #' 
+#'\dontrun{
+#' ## ============================= For Linux OS ============================
+#' ## ---------- Download the amino acid sequence from github ---------------
+#' url1 <- paste0("https://github.com/genomaths/seqalignments/raw/master/",
+#'                "Pyrococcus/pep_seq_all/",
+#'                "Pyrococcus_abyssi_ge5.ASM19593v2.pep.all.fa")
+#'  
+#' url2 <- paste0("https://github.com/genomaths/seqalignments/raw/master/",
+#'                "Pyrococcus/pep_seq_all/Pyrococcus_furiosus_dsm_3638.",
+#'                "ASM730v1.pep.all.fa")
+#'  
+#' ## The destination files are in the temporal 'tmp' local folder
+#' dir.create("/tmp/pyroc")
+#' outfile1 <- "/tmp/pyroc/p_abiss.fa"
+#' outfile2 <- "/tmp/pyroc/p_furiosus.fa"
+#'  
+#' download.file(url = url1, destfile = outfile1, method = "wget", quiet=TRUE)
+#' download.file(url = url2, destfile = outfile2, method = "wget", quiet=TRUE)
+#'  
+#' ## ---------------- Set the information needed for blastp ----------------
+#' db.fa <- "p_abiss.fa"
+#' dir.fa <- "/tmp/pyroc/"
+#' dir.db <- "/tmp/pyroc/"
+#' tmp <- dir.db
+#'  
+#' file <- "/tmp/pyroc/p_furiosus.fa"
+#' seqs <- readAAStringSet(filepath = file, format = "fasta")
+#' query.seq <- seqs[1:20]
+#' seq.name  <- substr(x = names(query.seq), start = 1, stop = 8)
+#' 
+#' ## Running blastp 
+#' blastp(query.seq=query.seq, dtb = NULL, seq.name = seq.name, db.fa = db.fa,
+#'        dir.fa = dir.fa, tmp = tmp)
+#'  
+#' ## ------------------------- delete 'pyroc' folder  --------------------
+#' unlink(x = "/tmp/pyroc", recursive = TRUE)
+#' }
 #' @aliases blastp
 setGeneric("blastp",
     function(query.seq, ...)
