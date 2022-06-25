@@ -23,7 +23,7 @@ Blast must be installed in your machine
 
     sudo apt install ncbi-blast+
 
-# Installation
+## Installation
 
 Be sure that both the R and bioconductor packages are up to date. To get
 the latest version of Bioconductor by starting R and entering the
@@ -41,5 +41,9 @@ Install R dependencies:
 You can install ‘rblastp’ from GitHub:
 
     install.packages("devtools")
-    # Master stable version (0.3.2.3)
     devtools::install_git("https://github.com/genomaths/rblastp.git")
+
+## Status
+
+This application is under development. Watch this repo or check for
+updates.

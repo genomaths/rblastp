@@ -15,7 +15,7 @@ The dataset contains the annotated peptide sequences from Pyrococcus furiosus.
 The fasta file can be downloaded from:
 }
 \details{
-<https://bacteria.ensembl.org/Pyrococcus_furiosus_dsm_3638_gca_000007305/Info/Index>
+\url{https://bacteria.ensembl.org/Pyrococcus_furiosus_dsm_3638_gca_000007305/Info/Index}
 }
 \author{
 Robersy Sanchez (\url{https://genomaths.com}).

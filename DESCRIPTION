@@ -1,14 +1,34 @@
 Package: rblastp
-Type: Package
-Title: What the Package Does (Title Case)
+Title: rblastp: An R interface to run command line blastp
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R: 
+    person( given = "Robersy",
+            family = "Sanchez",
+            role = c("aut", "cre"),
+            email = "genomicmath@gmail.com",
+            comment = c(ORCID = "0000-0002-5246-1453"))
+URL: https://github.com/genomaths/rblastp
+BugReports: https://github.com/genomaths/rblastp/issues
+Description: 
+            This an R package to run command line blastp from R, permitting
+            a soft downstream continuation of a pipeline analysis in R.
+Depends: 
+    R (>= 2.10)
+License: GPL-3.0 license
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.2
-Depends: 
-    R (>= 2.10)
+Imports:
+    Biostrings,
+    S4Vectors,
+    BiocParallel
+Suggests:
+    spelling,
+    rmarkdown,
+    BiocStyle,
+    testthat (>= 3.0.0),
+    knitr
+Roxygen: list(markdown = TRUE)
+Language: en-US
+Config/testthat/edition: 3
+VignetteBuilder: knitr

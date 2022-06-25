@@ -41,51 +41,51 @@ blastp(query.seq, ...)
 )
 }
 \arguments{
-\item{query.seq}{An \code{\link[Biostrings]{AAStringSet-class}} object. 
-(\code{link[Biostrings]{XStringSet-class}}) from *Biostrings* package
-carrying the query amino acid sequence(s). This obeject can be created 
-reading the fasta file of interest with function 
-\code{\link[Biostrings]{readDNAStringSet}} from' *Biostrings* package.}
+\item{query.seq}{An \code{\link[Biostrings]{AAStringSet-class}} object.
+(\code{link[Biostrings]{XStringSet-class}}) from \emph{Biostrings} package
+carrying the query amino acid sequence(s). This obeject can be created
+reading the fasta file of interest with function
+\code{\link[Biostrings]{readDNAStringSet}} from' \emph{Biostrings} package.}
 
 \item{dtb}{whole path to the database of sequences. For example, it would be
 dtb = "/Path_to_database/dataBaseName" (do not add any extension after the
 "dataBaseName", see details). The database must be created by function
 'blastdbcmd', as specified for
 \href{https://www.ncbi.nlm.nih.gov/books/NBK279671/}{NCBI} blast. Default is
-NULL. If not provided, then function *blasp* will try to create it using the
-information provided in parameters *db.fa* and *dir.fa*.}
+NULL. If not provided, then function \emph{blasp} will try to create it using the
+information provided in parameters \emph{db.fa} and \emph{dir.fa}.}
 
-\item{db.fa, dir.fa}{Name and directory of the file containing the fasta 
-sequence(s) to build a ncbi-blast database if dtb = NULL. 'db.fa' 
+\item{db.fa, dir.fa}{Name and directory of the file containing the fasta
+sequence(s) to build a ncbi-blast database if dtb = NULL. 'db.fa'
 can be a \code{\link[Biostrings]{AAStringSet-class}} object.}
 
-\item{db.fa.name}{if 'db.fa' is a 
+\item{db.fa.name}{if 'db.fa' is a
 \code{\link[Biostrings]{AAStringSet-class}}, a database will be created. To
 create the database the object 'db.fa' will be written as a fasta file in the
 'dir.fa' directory with the names 'db.fa.name'. Default is NULL.}
 
 \item{tmp}{A directory where to write a temporal file.}
 
-\item{maxTargetSeqs}{Integer value to pass to blastp. The maximum number of 
+\item{maxTargetSeqs}{Integer value to pass to blastp. The maximum number of
 sequences to target in the database. Default is 2, i.e., for each query
-sequence, the two top sequences from the database with the minimum 
-pairwise alignment *evalue* will be returned.}
+sequence, the two top sequences from the database with the minimum
+pairwise alignment \emph{evalue} will be returned.}
 
-\item{seq.index}{A numerical vector indicating the subset of sequences 
-from the 'query.seq' that should be use in blastp. Default is NULL, i.e., 
+\item{seq.index}{A numerical vector indicating the subset of sequences
+from the 'query.seq' that should be use in blastp. Default is NULL, i.e.,
 all the sequences from 'query.seq' will be subject of 'blastp' searching.}
 
 \item{numcode}{The NCBI genetic code number for translation. By default the
 standard genetic code is used.}
 
 \item{num.cores, tasks}{Parameters for parallel computation using
-\code{\link[BiocParallel]{BiocParallel-package}}: the number of cores to 
+\code{\link[BiocParallel]{BiocParallel-package}}: the number of cores to
 use, i.e. at most how many child processes will be run simultaneously (see
 \code{\link[BiocParallel]{bplapply}} and the number of tasks per job (only
 for Linux OS).}
 }
 \description{
-This function is a wrapping to use the 
+This function is a wrapping to use the
 \href{https://www.ncbi.nlm.nih.gov/books/NBK279671/}{NCBI} BLASTP programs
 for search protein subjects using a protein query. The function applies the
 command line version of the Basic Local Alignment Search Tool (BLAST), as
@@ -96,19 +96,19 @@ alignment based on DNA sequence breaks the codons. The best accuracy is
 obtained by translating the codon sequence into amino-acid sequence.
 }
 \details{
-BLAST command line sofware must be previously installed in the 
+BLAST command line sofware must be previously installed in the
 local computer where this function will be called, as explained at
 \href{https://www.ncbi.nlm.nih.gov/books/NBK279671/}{NCBI}. it is worthy to
 notice that once created the ncbi-blast database contains six files with the
 following structure:
-    \itemize{
-        \item{dataBaseName.phr}
-        \item{dataBaseName.pin}
-        \item{dataBaseName.pog}
-        \item{ataBaseName.psd}
-        \item{dataBaseName.psi}
-        \item{dataBaseName.psq}
-    }
+\itemize{
+\item{dataBaseName.phr}
+\item{dataBaseName.pin}
+\item{dataBaseName.pog}
+\item{ataBaseName.psd}
+\item{dataBaseName.psi}
+\item{dataBaseName.psq}
+}
 }
 \examples{
 #' ## The destination files are in the temporal 'tmp' local folder
@@ -164,5 +164,5 @@ unlink(x = "/tmp/pyroc", recursive = TRUE)
 }
 }
 \author{
-Robersy Sanchez <https://genomaths.com>
+Robersy Sanchez \url{https://genomaths.com}
 }

@@ -15,7 +15,7 @@ The dataset contains the annotated peptide sequences from Pyrococcus abyss.
 The fasta file can be downloaded from:
 }
 \details{
-<https://bacteria.ensembl.org/Pyrococcus_abyssi_ge5_gca_000195935/Info/Index>
+\url{https://bacteria.ensembl.org/Pyrococcus_abyssi_ge5_gca_000195935/Info/Index}
 }
 \author{
 Robersy Sanchez (\url{https://genomaths.com}).
