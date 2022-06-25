@@ -1,0 +1,19 @@
+# rblastp: An R interface to run command line blastp
+
+# Description
+This an R package to run command line [blastp](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE=Proteins) from R,
+permitting a soft downstream continuation of a pipeline analysis in R.
+
+# Get Started
+## Command-line Blast 
+
+Blast must be installed in your machine
+```
+sudo apt install ncbi-blast+
+```
+
+## Example 1
+
+```
+
+```
